@@ -13,10 +13,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.navigation.NavController
 import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModel
 
 @Composable
 fun HomeScreen(
+    navController: NavController,
     viewModel: HomeViewModel
 ) {
     val total by viewModel.total.collectAsState()
