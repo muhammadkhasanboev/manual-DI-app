@@ -7,6 +7,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import uz.Muhammad.manual_di_app.BuildConfig
+import uz.Muhammad.manual_di_app.data.remote.api.ApiService
 import kotlin.apply
 
 class AppContainer {
@@ -28,4 +29,6 @@ class AppContainer {
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .client(okHttpClient)
         .build()
+
+    val apiService: ApiService = retrofit.create(ApiService::class.java)
 }
