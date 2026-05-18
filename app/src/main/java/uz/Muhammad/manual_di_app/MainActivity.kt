@@ -11,11 +11,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import uz.Muhammad.manual_di_app.appContainer.AppContainer
+import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModelFactory
 import uz.Muhammad.manual_di_app.ui.theme.ManualDIappTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val appContainer = (application as ManualDIApp).appContainer
+        val homeViewModelFactory = HomeViewModelFactory(appContainer.postsRepository)
         enableEdgeToEdge()
         setContent {
             ManualDIappTheme {
