@@ -21,8 +21,9 @@ fun HomeScreen(
     navController: NavController,
     viewModel: HomeViewModel
 ) {
-    val total by viewModel.total.collectAsState()
+//    val total by viewModel.total.collectAsState()
     val error by viewModel.error.collectAsState()
+    val post by viewModel.post.collectAsState()
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -36,7 +37,8 @@ fun HomeScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         when {
-            total != null -> Text("Total posts: $total")
+//            total != null -> Text("Total posts: $total")
+            post !=null->Text("$post")
             error != null -> Text("Error: $error")
         }
     }
