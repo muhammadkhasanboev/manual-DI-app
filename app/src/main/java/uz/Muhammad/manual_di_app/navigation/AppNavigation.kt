@@ -9,9 +9,13 @@ import androidx.navigation.compose.rememberNavController
 import uz.Muhammad.manual_di_app.ui.home.ui.HomeScreen
 import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModelFactory
 import uz.Muhammad.manual_di_app.ui.posts.ui.PostsScreen
+import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsViewModel
+import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsViewModelFactory
 
 @Composable
-fun AppNavigation(homeViewModelFactory: HomeViewModelFactory){
+fun AppNavigation(
+    homeViewModelFactory: HomeViewModelFactory,
+    postsViewModelFactory: PostsViewModelFactory){
     val navController = rememberNavController()
 
     NavHost(
@@ -20,7 +24,8 @@ fun AppNavigation(homeViewModelFactory: HomeViewModelFactory){
     ){
         composable(Routes.HOME){
             HomeScreen(
-                onPosts = {navController.navigate(PostsScreen())},
+                onPosts = {navController.navigate(PostsScreen(viewModel = viewModel(factory = postsViewModelFactory))},
+                onQuotes = {},
                 viewModel = viewModel(factory = homeViewModelFactory)
             )
         }
