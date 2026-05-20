@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModel
@@ -56,8 +57,8 @@ fun HomeScreen(
     ){
         Text(
             text = "Choose what you want to read:",
-            modifier = Modifier.fillMaxSize(),
-            fontSize = 20.sp,
+            modifier = Modifier.fillMaxSize().padding(top=30.dp),
+            fontSize = 25.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center
         )
