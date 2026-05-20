@@ -22,12 +22,13 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import uz.Muhammad.manual_di_app.ui.home.components.CustomCard
 import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModel
+import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsViewModel
 
 @Composable
 fun HomeScreen(
     onPosts: () -> Unit,
     onQuotes: () -> Unit,
-    viewModel: HomeViewModel
+    viewModel: PostsViewModel
 ) {
 //    val total by viewModel.total.collectAsState()
 //    val error by viewModel.error.collectAsState()
