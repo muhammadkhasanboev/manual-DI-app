@@ -13,6 +13,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModel
 
@@ -21,25 +25,42 @@ fun HomeScreen(
     navController: NavController,
     viewModel: HomeViewModel
 ) {
-    val total by viewModel.total.collectAsState()
-    val error by viewModel.error.collectAsState()
-    val post by viewModel.post.collectAsState()
+//    val total by viewModel.total.collectAsState()
+//    val error by viewModel.error.collectAsState()
+//    val post by viewModel.post.collectAsState()
+//
+//    Column(
+//        modifier = Modifier.fillMaxSize(),
+//        verticalArrangement = Arrangement.Center,
+//        horizontalAlignment = Alignment.CenterHorizontally
+//    ) {
+//        Button(onClick = { viewModel.getPosts() }) {
+//            Text("Get Posts")
+//        }
+//
+//        Spacer(modifier = Modifier.height(16.dp))
+//
+//        when {
+////            total != null -> Text("Total posts: $total")
+//            post !=null->Text("$post \n $total")
+//            error != null -> Text("Error: $error")
+//        }
+//    }
 
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(25.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Button(onClick = { viewModel.getPosts() }) {
-            Text("Get Posts")
-        }
+    ){
+        Text(
+            text = "Choose what you want to read:",
+            modifier = Modifier.fillMaxSize(),
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center
+        )
 
-        Spacer(modifier = Modifier.height(16.dp))
-
-        when {
-//            total != null -> Text("Total posts: $total")
-            post !=null->Text("$post \n $total")
-            error != null -> Text("Error: $error")
-        }
     }
 }
