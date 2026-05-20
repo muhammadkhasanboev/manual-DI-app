@@ -1,5 +1,6 @@
 package uz.Muhammad.manual_di_app.ui.home.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
@@ -12,10 +13,13 @@ import uz.Muhammad.manual_di_app.ui.theme.Purple80
 @Composable
 fun CustomCard(
     modifier: Modifier = Modifier,
+    onClick: () -> Unit,
     content: @Composable () -> Unit
 ){
     ElevatedCard(
-        modifier = modifier,
+        modifier = modifier.clickable(
+            onClick = { }
+        ),
         shape = RoundedCornerShape(20.dp),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 10.dp

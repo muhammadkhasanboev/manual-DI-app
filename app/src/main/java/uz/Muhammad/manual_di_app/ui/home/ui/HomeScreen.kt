@@ -68,7 +68,8 @@ fun HomeScreen(
         Spacer(modifier = Modifier.height(20.dp))
 
         CustomCard(
-            modifier = Modifier.fillMaxWidth()) {
+            modifier = Modifier.fillMaxWidth(),
+            onClick = { }) {
             Text(
                 text="Posts",
                 modifier = Modifier.padding(10.dp),
@@ -80,7 +81,8 @@ fun HomeScreen(
         Spacer(modifier = Modifier.height(20.dp))
 
         CustomCard(
-            modifier = Modifier.fillMaxWidth()) {
+            modifier = Modifier.fillMaxWidth(),
+            onClick = { }) {
             Text(
                 text="Quotes",
                 modifier = Modifier.padding(10.dp),
