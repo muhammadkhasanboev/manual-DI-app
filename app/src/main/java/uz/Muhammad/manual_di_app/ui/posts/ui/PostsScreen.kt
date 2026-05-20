@@ -1,9 +1,11 @@
 package uz.Muhammad.manual_di_app.ui.posts.ui
 
+import android.widget.Button
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -34,6 +36,12 @@ fun PostsScreen(
         when {
             post != null -> Text("$post")
             else -> Text("Network problems")
+        }
+
+        Button(
+            onClick={viewModel.nextPost()}
+        ){
+            Text("Next post")
         }
     }
 }
