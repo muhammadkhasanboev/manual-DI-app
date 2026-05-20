@@ -11,6 +11,7 @@ import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModelFactory
 import uz.Muhammad.manual_di_app.ui.posts.ui.PostsScreen
 import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsViewModel
 import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsViewModelFactory
+import uz.Muhammad.manual_di_app.ui.quotes.ui.QuotesScreen
 import uz.Muhammad.manual_di_app.ui.quotes.viewmodel.QuotesViewModelFactory
 
 @Composable
@@ -37,7 +38,9 @@ fun AppNavigation(
             )
         }
         composable(Routes.QUOTES) {
-
+            QuotesScreen(
+                viewModel = viewModel(factory = quotesViewModelFactory)
+            )
         }
     }
 }
