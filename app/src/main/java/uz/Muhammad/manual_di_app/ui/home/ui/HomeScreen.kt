@@ -65,10 +65,13 @@ fun HomeScreen(
             textAlign = TextAlign.Center
         )
 
+        Spacer(modifier = Modifier.height(20.dp))
 
-        CustomCard(modifier = Modifier.fillMaxWidth()) {
+        CustomCard(
+            modifier = Modifier.fillMaxWidth()) {
             Text(
                 text="Posts",
+                modifier = Modifier.padding(10.dp),
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Bold
             )
@@ -76,8 +79,14 @@ fun HomeScreen(
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        CustomCard(modifier = Modifier.fillMaxWidth()) {
-            Text("Quotes")
+        CustomCard(
+            modifier = Modifier.fillMaxWidth()) {
+            Text(
+                text="Quotes",
+                modifier = Modifier.padding(10.dp),
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold
+            )
         }
 
     }
