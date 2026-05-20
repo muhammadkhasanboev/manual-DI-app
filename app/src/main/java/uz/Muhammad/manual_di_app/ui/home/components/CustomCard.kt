@@ -18,7 +18,7 @@ fun CustomCard(
 ){
     ElevatedCard(
         modifier = modifier.clickable(
-            onClick = { }
+            onClick = onClick
         ),
         shape = RoundedCornerShape(20.dp),
         elevation = CardDefaults.cardElevation(

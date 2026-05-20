@@ -24,9 +24,14 @@ fun AppNavigation(
     ){
         composable(Routes.HOME){
             HomeScreen(
-                onPosts = {navController.navigate(PostsScreen(viewModel = viewModel(factory = postsViewModelFactory))},
+                onPosts = {navController.navigate(Routes.POSTS)},
                 onQuotes = {},
                 viewModel = viewModel(factory = homeViewModelFactory)
+            )
+        }
+        composable(Routes.POSTS) {
+            PostsScreen(
+                viewModel = viewModel(factory = postsViewModelFactory)
             )
         }
     }
