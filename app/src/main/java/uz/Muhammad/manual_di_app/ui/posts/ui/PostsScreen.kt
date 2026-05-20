@@ -12,10 +12,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModel
+import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsViewModel
 
 @Composable
 fun PostsScreen(
-    viewModel: HomeViewModel
+    viewModel: PostsViewModel
 ){
     val post by viewModel.post.collectAsState()
 
