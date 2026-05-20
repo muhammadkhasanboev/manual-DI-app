@@ -1,4 +1,4 @@
-package uz.Muhammad.manual_di_app.data.remote.dto
+package uz.Muhammad.manual_di_app.data.remote.dto.posts
 
 data class posts(
     val limit: Int,

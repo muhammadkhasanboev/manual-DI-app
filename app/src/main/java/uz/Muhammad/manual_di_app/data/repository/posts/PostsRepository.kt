@@ -1,7 +1,7 @@
 package uz.Muhammad.manual_di_app.data.repository.posts
 
 import uz.Muhammad.manual_di_app.data.remote.api.ApiService
-import uz.Muhammad.manual_di_app.data.remote.dto.posts
+import uz.Muhammad.manual_di_app.data.remote.dto.posts.posts
 
 class PostsRepository(
     private val api: ApiService

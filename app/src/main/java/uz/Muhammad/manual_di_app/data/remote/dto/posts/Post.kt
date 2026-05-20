@@ -1,4 +1,6 @@
-package uz.Muhammad.manual_di_app.data.remote.dto
+package uz.Muhammad.manual_di_app.data.remote.dto.posts
+
+import uz.Muhammad.manual_di_app.data.remote.dto.posts.Reactions
 
 data class Post(
     val body: String,
