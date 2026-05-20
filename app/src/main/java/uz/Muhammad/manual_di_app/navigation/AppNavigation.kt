@@ -11,11 +11,13 @@ import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModelFactory
 import uz.Muhammad.manual_di_app.ui.posts.ui.PostsScreen
 import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsViewModel
 import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsViewModelFactory
+import uz.Muhammad.manual_di_app.ui.quotes.viewmodel.QuotesViewModelFactory
 
 @Composable
 fun AppNavigation(
     homeViewModelFactory: HomeViewModelFactory,
-    postsViewModelFactory: PostsViewModelFactory){
+    postsViewModelFactory: PostsViewModelFactory,
+    quotesViewModelFactory: QuotesViewModelFactory){
     val navController = rememberNavController()
 
     NavHost(
@@ -33,6 +35,9 @@ fun AppNavigation(
             PostsScreen(
                 viewModel = viewModel(factory = postsViewModelFactory)
             )
+        }
+        composable(Routes.QUOTES) {
+
         }
     }
 }

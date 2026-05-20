@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import uz.Muhammad.manual_di_app.navigation.AppNavigation
 import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModelFactory
 import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsViewModelFactory
+import uz.Muhammad.manual_di_app.ui.quotes.viewmodel.QuotesViewModelFactory
 import uz.Muhammad.manual_di_app.ui.theme.ManualDIappTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,12 +16,14 @@ class MainActivity : ComponentActivity() {
         val appContainer = (application as ManualDIApp).appContainer
         val homeViewModelFactory = HomeViewModelFactory(appContainer.postsRepository)
         val postsViewModelFactory = PostsViewModelFactory(appContainer.postsRepository)
+        val quotesViewModelFactory = QuotesViewModelFactory(appContainer.quotesRepository)
         enableEdgeToEdge()
         setContent {
             ManualDIappTheme {
                 AppNavigation(
                     homeViewModelFactory,
-                    postsViewModelFactory)
+                    postsViewModelFactory,
+                    quotesViewModelFactory)
             }
         }
     }
