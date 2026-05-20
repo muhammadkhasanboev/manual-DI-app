@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import uz.Muhammad.manual_di_app.data.remote.dto.quotes.Quote
+import uz.Muhammad.manual_di_app.data.remote.dto.quotes.Quotes
 import uz.Muhammad.manual_di_app.data.repository.quotes.QuotesRepository
 
 class QuotesViewModel(
@@ -28,6 +29,7 @@ class QuotesViewModel(
         viewModelScope.launch {
             val result = repository.getQuotes()
             result.onSuccess {
+                _allQuotes.addAll(it.quotes)
                 _quote.value = it.quotes[currentIndex].quote
             }
         }
