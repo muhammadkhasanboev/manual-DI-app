@@ -11,8 +11,8 @@ class HomeViewModel(
     private val repository: PostsRepository
 ) : ViewModel() {
 
-//    private val _total = MutableStateFlow<Int?>(null)
-//    val total: StateFlow<Int?> = _total
+    private val _total = MutableStateFlow<Int?>(null)
+    val total: StateFlow<Int?> = _total
 
     private val _error = MutableStateFlow<String?>(null)
     val error: StateFlow<String?> = _error
@@ -25,7 +25,7 @@ class HomeViewModel(
             val result = repository.getPosts()
             result
                 .onSuccess {
-//                    _total.value = it.total
+                    _total.value = it.total
                     _post.value = it.posts[0].body
                 }
                 .onFailure { _error.value = it.message }

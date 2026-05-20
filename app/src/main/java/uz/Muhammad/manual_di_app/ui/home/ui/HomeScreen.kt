@@ -21,7 +21,7 @@ fun HomeScreen(
     navController: NavController,
     viewModel: HomeViewModel
 ) {
-//    val total by viewModel.total.collectAsState()
+    val total by viewModel.total.collectAsState()
     val error by viewModel.error.collectAsState()
     val post by viewModel.post.collectAsState()
 
@@ -38,7 +38,7 @@ fun HomeScreen(
 
         when {
 //            total != null -> Text("Total posts: $total")
-            post !=null->Text("$post")
+            post !=null->Text("$post \n $total")
             error != null -> Text("Error: $error")
         }
     }
