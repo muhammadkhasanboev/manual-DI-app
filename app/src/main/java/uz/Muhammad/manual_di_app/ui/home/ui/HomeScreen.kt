@@ -65,7 +65,9 @@ fun HomeScreen(
 
         CustomCard(
             modifier = Modifier.fillMaxWidth(),
-            onClick = { }) {
+            onClick = {
+                onQuotes()
+            }) {
             Text(
                 text="Quotes",
                 modifier = Modifier.padding(10.dp),
