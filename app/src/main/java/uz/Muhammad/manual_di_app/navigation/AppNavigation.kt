@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import uz.Muhammad.manual_di_app.ui.home.ui.HomeScreen
 import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModelFactory
+import uz.Muhammad.manual_di_app.ui.posts.ui.PostsScreen
 
 @Composable
 fun AppNavigation(homeViewModelFactory: HomeViewModelFactory){
@@ -19,7 +20,7 @@ fun AppNavigation(homeViewModelFactory: HomeViewModelFactory){
     ){
         composable(Routes.HOME){
             HomeScreen(
-                navController = navController,
+                onPosts = {navController.navigate(PostsScreen())},
                 viewModel = viewModel(factory = homeViewModelFactory)
             )
         }

@@ -25,7 +25,8 @@ import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModel
 
 @Composable
 fun HomeScreen(
-    navController: NavController,
+    onPosts: () -> Unit,
+    onQuotes: () -> Unit,
     viewModel: HomeViewModel
 ) {
 //    val total by viewModel.total.collectAsState()
