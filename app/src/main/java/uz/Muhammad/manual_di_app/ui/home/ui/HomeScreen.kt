@@ -30,28 +30,6 @@ fun HomeScreen(
     onQuotes: () -> Unit,
     viewModel: PostsViewModel
 ) {
-//    val total by viewModel.total.collectAsState()
-//    val error by viewModel.error.collectAsState()
-//    val post by viewModel.post.collectAsState()
-//
-//    Column(
-//        modifier = Modifier.fillMaxSize(),
-//        verticalArrangement = Arrangement.Center,
-//        horizontalAlignment = Alignment.CenterHorizontally
-//    ) {
-//        Button(onClick = { viewModel.getPosts() }) {
-//            Text("Get Posts")
-//        }
-//
-//        Spacer(modifier = Modifier.height(16.dp))
-//
-//        when {
-////            total != null -> Text("Total posts: $total")
-//            post !=null->Text("$post \n $total")
-//            error != null -> Text("Error: $error")
-//        }
-//    }
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -73,7 +51,8 @@ fun HomeScreen(
             modifier = Modifier.fillMaxWidth(),
             onClick = {
                 onPosts()
-            }) {
+            }
+        ) {
             Text(
                 text="Posts",
                 modifier = Modifier.padding(10.dp),
