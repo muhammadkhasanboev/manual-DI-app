@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import uz.Muhammad.manual_di_app.data.remote.dto.posts.Post
 import uz.Muhammad.manual_di_app.data.repository.posts.PostsRepository
+import uz.Muhammad.manual_di_app.data.repository.posts.PostsRepositoryImpl
 
 class PostsViewModel(
     private val repository: PostsRepository

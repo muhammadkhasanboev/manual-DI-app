@@ -9,6 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import uz.Muhammad.manual_di_app.BuildConfig
 import uz.Muhammad.manual_di_app.data.remote.api.ApiService
 import uz.Muhammad.manual_di_app.data.repository.posts.PostsRepository
+import uz.Muhammad.manual_di_app.data.repository.posts.PostsRepositoryImpl
 import uz.Muhammad.manual_di_app.data.repository.quotes.QuotesRepository
 import kotlin.apply
 
@@ -33,6 +34,6 @@ class AppContainer {
         .build()
 
     val apiService: ApiService = retrofit.create(ApiService::class.java)
-    val postsRepository: PostsRepository = PostsRepository(apiService)
+    val postsRepository: PostsRepository = PostsRepositoryImpl(apiService)
     val quotesRepository: QuotesRepository = QuotesRepository(apiService)
 }
