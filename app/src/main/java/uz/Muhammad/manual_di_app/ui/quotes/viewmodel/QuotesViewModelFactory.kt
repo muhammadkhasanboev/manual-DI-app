@@ -3,7 +3,6 @@ package uz.Muhammad.manual_di_app.ui.quotes.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import uz.Muhammad.manual_di_app.data.repository.quotes.QuotesRepository
-import uz.Muhammad.manual_di_app.data.repository.quotes.QuotesRepositoryImpl
 
 class QuotesViewModelFactory(
     private val repository: QuotesRepository

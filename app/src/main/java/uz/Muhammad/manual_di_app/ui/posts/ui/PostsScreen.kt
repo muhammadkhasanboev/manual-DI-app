@@ -1,6 +1,5 @@
 package uz.Muhammad.manual_di_app.ui.posts.ui
 
-import android.widget.Button
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,7 +14,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModel
 import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsUIState
 import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsViewModel
 

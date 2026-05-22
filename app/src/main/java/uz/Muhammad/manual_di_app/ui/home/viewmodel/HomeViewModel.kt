@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import uz.Muhammad.manual_di_app.data.repository.posts.PostsRepository
-import uz.Muhammad.manual_di_app.data.repository.posts.PostsRepositoryImpl
 
 class HomeViewModel(
     private val repository: PostsRepository

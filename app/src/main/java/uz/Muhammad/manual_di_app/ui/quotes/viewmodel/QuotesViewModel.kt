@@ -7,7 +7,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import uz.Muhammad.manual_di_app.data.remote.dto.quotes.Quote
 import uz.Muhammad.manual_di_app.data.repository.quotes.QuotesRepository
-import uz.Muhammad.manual_di_app.data.repository.quotes.QuotesRepositoryImpl
 
 class QuotesViewModel(
     private val repository: QuotesRepository

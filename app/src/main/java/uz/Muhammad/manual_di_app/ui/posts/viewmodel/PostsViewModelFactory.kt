@@ -3,7 +3,6 @@ package uz.Muhammad.manual_di_app.ui.posts.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import uz.Muhammad.manual_di_app.data.repository.posts.PostsRepository
-import uz.Muhammad.manual_di_app.data.repository.posts.PostsRepositoryImpl
 
 class PostsViewModelFactory(
     private val repository: PostsRepository
