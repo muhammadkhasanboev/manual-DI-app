@@ -35,3 +35,10 @@ class QuotesViewModel(
         }
     }
 }
+
+
+sealed class QuoteUIState{
+    object Idle: QuoteUIState()
+    object Loading: QuoteUIState()
+    object Error: QuoteUIState()
+}
