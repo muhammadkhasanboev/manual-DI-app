@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -15,13 +16,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModel
+import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsUIState
 import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsViewModel
 
 @Composable
 fun PostsScreen(
     viewModel: PostsViewModel
 ){
-    val post by viewModel.post.collectAsState()
+    val uiState by viewModel.uiState.collectAsState()
     LaunchedEffect(Unit) {
         viewModel.getPost()
     }
@@ -33,9 +35,11 @@ fun PostsScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        when {
-            post != null -> Text("$post")
-            else -> Text("Network problems")
+        when(val state = uiState) {
+            is PostsUIState.Idle -> Text("Tap button to get Post")
+            is PostsUIState.Loading -> CircularProgressIndicator()
+            is PostsUIState.Success -> Text(state.post)
+            is PostsUIState.Error -> Text(state.message)
         }
 
         Button(
