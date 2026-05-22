@@ -26,12 +26,16 @@ class PostsViewModel(
     }
 
     fun getPost(){
+        _uiState.value = PostsUIState.Loading
         viewModelScope.launch {
             val result = repository.getPosts()
             result .onSuccess{
                 _allPosts.addAll(it.posts)
                 _uiState.value = PostsUIState.Success(_allPosts[currentIndex].body)
             }
+                .onFailure {
+                    _uiState.value = PostsUIState.Error("Unknown error")
+                }
         }
     }
 }
