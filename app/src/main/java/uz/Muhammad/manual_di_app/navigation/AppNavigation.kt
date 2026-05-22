@@ -6,7 +6,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import uz.Muhammad.manual_di_app.ui.home.ui.HomeScreen
-import uz.Muhammad.manual_di_app.ui.home.viewmodel.HomeViewModelFactory
 import uz.Muhammad.manual_di_app.ui.posts.ui.PostsScreen
 import uz.Muhammad.manual_di_app.ui.posts.viewmodel.PostsViewModelFactory
 import uz.Muhammad.manual_di_app.ui.quotes.ui.QuotesScreen
@@ -14,7 +13,6 @@ import uz.Muhammad.manual_di_app.ui.quotes.viewmodel.QuotesViewModelFactory
 
 @Composable
 fun AppNavigation(
-    homeViewModelFactory: HomeViewModelFactory,
     postsViewModelFactory: PostsViewModelFactory,
     quotesViewModelFactory: QuotesViewModelFactory){
     val navController = rememberNavController()
