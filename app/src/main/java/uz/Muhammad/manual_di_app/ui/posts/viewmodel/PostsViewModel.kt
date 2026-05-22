@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import uz.Muhammad.manual_di_app.data.remote.dto.posts.Post
+import uz.Muhammad.manual_di_app.data.remote.dto.posts.posts
 import uz.Muhammad.manual_di_app.data.repository.posts.PostsRepository
 import uz.Muhammad.manual_di_app.data.repository.posts.PostsRepositoryImpl
 
@@ -13,8 +14,8 @@ class PostsViewModel(
     private val repository: PostsRepository
 ): ViewModel() {
 
-    private val _post = MutableStateFlow<String?>(null)
-    val post: StateFlow<String?> = _post
+   private val _uiState = MutableStateFlow<PostsUIState>(PostsUIState.Idle)
+    val uiState: StateFlow<PostsUIState> = _uiState
 
     private val _allPosts = mutableListOf<Post>()
     private var currentIndex = 0
@@ -22,7 +23,7 @@ class PostsViewModel(
     fun nextPost(){
         if(currentIndex< _allPosts.size - 1){
             currentIndex++
-            _post.value = _allPosts[currentIndex].body
+            _uiState.value = PostsUIState.Success(_allPosts[currentIndex].body)
         }
     }
 
@@ -31,8 +32,15 @@ class PostsViewModel(
             val result = repository.getPosts()
             result .onSuccess{
                 _allPosts.addAll(it.posts)
-                _post.value = it.posts[currentIndex].body
+                _uiState.value = PostsUIState.Success(_allPosts[currentIndex].body)
             }
         }
     }
+}
+
+sealed class PostsUIState{
+    object Idle: PostsUIState()
+    object Loading: PostsUIState()
+    data class Success(val post: String): PostsUIState()
+    data class Error(val message: String): PostsUIState()
 }
