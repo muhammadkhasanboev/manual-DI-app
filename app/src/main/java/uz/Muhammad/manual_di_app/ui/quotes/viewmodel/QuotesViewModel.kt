@@ -6,10 +6,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import uz.Muhammad.manual_di_app.data.remote.dto.quotes.Quote
+import uz.Muhammad.manual_di_app.data.repository.quotes.QuotesRepository
 import uz.Muhammad.manual_di_app.data.repository.quotes.QuotesRepositoryImpl
 
 class QuotesViewModel(
-    private val repository: QuotesRepositoryImpl
+    private val repository: QuotesRepository
 ): ViewModel() {
     private val _quote = MutableStateFlow<String?>(null)
     val quote : StateFlow<String?> = _quote
